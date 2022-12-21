@@ -36,7 +36,7 @@ if [[ -z "${HOME:-}" ]]; then
     export HOME=~
 fi
 
-bash_tools="${HOME}/.dotfiles/home"
+bash_tools="${HOME}/.local/share/chezmoi/home"
 
 # shellcheck disable=SC1090
 . "${bash_tools}/.bash.d/os_detection.sh"
@@ -119,14 +119,14 @@ if [[ "${EUID}" -eq 0 ]]; then
 fi
 
 # shellcheck disable=SC1090
-type add_PATH &>/dev/null || . "${bash_tools}/.bash.d/paths.sh"
+#type add_PATH &>/dev/null || . "${bash_tools}/.bash.d/paths.sh"
 
 # ============================================================================ #
 
 # want this to fail is there is no match because we should always have local .bash.d/*.sh in this repo
 # shopt -s nullglob
 for src in "${bash_tools}/.bash.d/"*.sh; do
-    # shellcheck disable=SC1090
+#   # shellcheck disable=SC1090
     . "${src}"
 done
 # shopt -u nullglob

@@ -1,5 +1,3 @@
-able File  68 lines (54 sloc)  1.33 KB
-
 #!/bin/sh
 
 # -e: exit on error

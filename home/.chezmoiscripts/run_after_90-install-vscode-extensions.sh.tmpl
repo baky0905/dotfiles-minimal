@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# {{ template "scripts-library" }}
+
+# The following line is for ShellCheck to correctly identify the above include
+true || source ../.chezmoitemplates/scripts-library
+
+function is_vscode_extension_installed() {
+    local extension="$1"
+
+    code --list-extensions 2>/dev/null | grep -q "${extension}"
+}
+
+wanted_extensions=(
+    # aaron-bond.better-comments
+    # alefragnani.Bookmarks
+    # almenon.arepl
+    # amazonwebservices.aws-toolkit-vscode
+     boto3typed.boto3-ide
+    # christian-kohler.path-intellisense
+     eamodio.gitlens
+     EditorConfig.EditorConfig
+     esbenp.prettier-vscode
+    # formulahendry.code-runner
+     foxundermoon.shell-format
+    # frhtylcn.pythonsnippets
+    # Gruntfuggly.todo-tree
+    # johnpapa.vscode-cloak
+     johnpapa.vscode-peacock
+    # KevinRose.vsc-python-indent
+    # littlefoxteam.vscode-python-test-adapter
+     mads-hartmann.bash-ide-vscode
+     mechatroner.rainbow-csv
+     mhutchie.git-graph
+     mikestead.dotenv
+     mpontus.tab-cycle
+     ms-azuretools.vscode-docker
+     ms-python.python
+     ms-python.vscode-pylance
+     ms-vscode-remote.remote-containers
+     ms-vscode-remote.remote-ssh
+     ms-vscode-remote.remote-ssh-edit
+     ms-vscode-remote.remote-wsl
+     ms-vscode-remote.vscode-remote-extensionpack
+     natqe.reload
+    # njpwerner.autodocstring
+     oderwat.indent-rainbow
+    # pnp.polacode
+     redhat.vscode-yaml
+     richie5um2.vscode-sort-json
+    # ritwickdey.LiveServer
+     sleistner.vscode-fileutils
+    # stkb.rewrap
+     streetsidesoftware.code-spell-checker
+    # thundra.thundra-debugger
+     timonwong.shellcheck
+     Tyriar.sort-lines
+    # usernamehw.errorlens
+     vscode-icons-team.vscode-icons
+    # yzhang.markdown-all-in-one
+)
+
+for extension in "${wanted_extensions[@]}"; do
+    if ! is_vscode_extension_installed "${extension}"; then
+        log_task "Installing VS Code extension: ${extension}"
+        c code --install-extension "${extension}"
+    fi
+done
