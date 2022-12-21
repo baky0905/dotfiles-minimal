@@ -1,0 +1,147 @@
+# shellcheck shell=bash
+
+# This file is automatically sourced by bash, and it's also sourced in .zshrc
+# in order to keep the same aliases on both shells. So keep in mind that any
+# code here must be compatible with bash and zsh.
+
+refreshenv() {
+    local shell
+
+    shell=$(ps -p $$ -ocomm=) &&
+        exec "${shell}"
+}
+
+# See: https://github.com/twpayne/chezmoi/issues/854#issuecomment-675160348
+chezmoi-re-run-scripts() { (
+    set -ex
+
+    rm -f "${HOME}/.config/chezmoi/chezmoistate.boltdb"
+    chezmoi init --apply
+); }
+
+# 
+
+cdw() {
+    local user_profile
+    local win_home
+
+    user_profile=$(wslvar USERPROFILE) &&
+        win_home=$(wslpath "${user_profile}") &&
+        cd "${win_home}"
+}
+
+# File management
+# -----------------------------------------------------------------------------
+
+# Navigating around
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Copies a file securely.
+alias cpv='rsync -ah --info=progress2'
+
+# Finds directories.
+alias fd='find . -type d -name'
+
+# Finds files.
+alias ff='find . -type f -name'
+
+mcd() {
+    local dir="$1"
+
+    mkdir -p "${dir}" &&
+        cd "${dir}"
+}
+
+cdr() {
+    local repo="${1:-}"
+
+    cd "${HOME}/repos/${repo}"
+}
+
+# General aliases
+# -----------------------------------------------------------------------------
+
+# Clears the console screen.
+alias c='clear'
+
+# Searches history.
+alias h='history_search'          # see file `functions`
+alias hs='history_session_search' # see file `functions`
+
+# Time
+# -----------------------------------------------------------------------------
+
+# Gets local/UTC date and time in ISO-8601 format `YYYY-MM-DDThh:mm:ss`.
+alias now='date +"%Y-%m-%dT%H:%M:%S"'
+alias unow='date -u +"%Y-%m-%dT%H:%M:%S"'
+
+# Gets date in `YYYY-MM-DD` format`
+alias nowdate='date +"%Y-%m-%d"'
+alias unowdate='date -u +"%Y-%m-%d"'
+
+# Gets time in `hh:mm:ss` format`
+alias nowtime='date +"%T"'
+alias unowtime='date -u +"%T"'
+
+# Gets Unix time stamp`
+alias timestamp='date -u +%s'
+
+# Gets week number in ISO-8601 format `YYYY-Www`.
+alias week='date +"%Y-W%V"'
+
+# Gets weekday number.
+alias weekday='date +"%u"'
+
+# Sysadmin
+# -----------------------------------------------------------------------------
+
+# Prints each $PATH entry on a separate line.
+alias path='echo -e ${PATH//:/\\n}'
+
+# Displays information about the system.
+for command in winfetch neofetch screenfetch; do
+    if type "${command}" &>/dev/null; then
+        alias sysinfo='$command'
+        break
+    fi
+done
+
+# Development
+# -----------------------------------------------------------------------------
+
+# Creates shortcuts for Docker.
+alias dk='docker'
+alias dco='docker-compose'
+
+# Creates shortcut for Git.
+alias g='git'
+alias ga='git add .'
+alias gp='git push'
+
+gc() {
+    git commit -m "${1}"
+}
+
+gac() {
+    git add .
+    git commit -m "${1}"
+}
+
+gcl() {
+    git clone "${1}"
+}
+
+gcb() {
+    git checkout -b "${1}"
+}
+
+# Creates shortcut for python
+
+# Creates Python virtual environment `venv`.
+alias ve='python3 -m venv ./.venv'
+
+# Activates Python virtual environment `venv`.
+alias va='if [ -d ./.venv ]; then \. ./.venv/bin/activate; elif [ -d ./venv ]; then \. ./venv/bin/activate; fi'
+
+# 
