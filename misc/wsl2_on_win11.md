@@ -12,6 +12,17 @@ Caution: Once unregistered, all data, settings, and software associated with tha
 - If you need to update the forgotten password on a distribution that is not your default, use the command: `wsl -d Ubuntu-20.04 -u root`
   - Once your WSL distribution has been opened at the root level inside PowerShell, you can use this command to update your password: passwd <username> where <username> is the username of the account in the distribution whose password you've forgotten.
 - `sudo apt update && sudo apt upgrade`
+  
+- default user
+  
+`/etc/wsl.conf`  
+  
+```  
+[user]
+default=yourusername
+```
+  
+
 
 
 ## VS Code
