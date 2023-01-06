@@ -1,0 +1,29 @@
+{{- /* "chezmoi" is present as work around for https://github.com/twpayne/chezmoi/discussions/1724 */ -}}
+{{- $cache := dict "chezmoi" .chezmoi -}}
+
+{{- template "read-versions-and-revisions-cache" $cache -}}
+
+".docker/cli-plugins/docker-compose":
+  type: file
+  url: "https://github.com/docker/compose/releases/download/v{{ template "get-github-latest-version" list "docker/compose" $cache }}/docker-compose-linux-x86_64"
+  executable: true
+
+
+".docker/cli-plugins/docker-buildx":
+  type: file
+  url: "https://github.com/docker/buildx/releases/download/v{{ template "get-github-latest-version" list "docker/buildx" $cache }}/buildx-v{{ template "get-github-latest-version" list "docker/buildx" $cache }}.linux-amd64"
+  executable: true
+
+
+# Downloads all the variants of Fira Code Nerd Font
+{{-   range $_, $face := list "Regular" "Light" "Medium" "Bold" "Retina" "SemiBold" -}}
+{{-     range $_, $variant := list "" " Mono" }}
+".local/share/fonts/Fira Code {{ $face }} Nerd Font Complete{{ $variant }}.ttf":
+  type: file
+  url: "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/{{ template "get-github-head-revision" list "ryanoasis/nerd-fonts" $cache }}/patched-fonts/FiraCode/{{ $face }}/complete/Fira%20Code%20{{ $face }}%20Nerd%20Font%20Complete{{ $variant | replace " " "%20" }}.ttf"
+{{      end -}}
+{{-   end -}}
+
+{{- template "save-versions-and-revisions-cache" $cache -}}
+
+{{- end -}}

@@ -1,0 +1,25 @@
+{{ if not .is_devcontainer -}}
+
+*.deb
+*.rpm
+*.tar
+*.tar.gz
+*.tar.xz
+*.tgz
+*.zip
+
+.local/bin/localpath
+
+.local/bin/docker
+
+# These files are now installed to system-wide
+.local/bin/docker-compose
+.local/bin/docker-credential-wincred.exe
+.local/bin/docker-credential-secretservice
+
+.local/share/gnome-shell/extensions/clipboard-indicator@tudmotu.com
+
+{{- end }}
+
+.antigen/
+.antigenrc
