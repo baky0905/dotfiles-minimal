@@ -1,0 +1,73 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "shift+f1",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "python.datascience.addcellbelow"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "-editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "editor.action.removeCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+u",
+    "command": "-editor.action.removeCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "python.datascience.runFileInteractive"
+  },
+  {
+    "key": "ctrl+alt+oem_comma",
+    "command": "workbench.action.openSettings2"
+  },
+  {
+    "key": "ctrl+shift+alt+v",
+    "command": "markdown-image.paste",
+    "when": "editorLangId == 'markdown' || editorLangId == 'mdx'"
+  },
+  {
+    "key": "shift+alt+v",
+    "command": "-markdown-image.paste",
+    "when": "editorLangId == 'markdown' || editorLangId == 'mdx'"
+  },
+  {
+    "key": "ctrl+shift+b b",
+    "command": "workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "-bookmarks.toggle",
+    "when": "editorTextFocus"
+  }
+]
