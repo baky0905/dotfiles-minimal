@@ -8,6 +8,8 @@
   url: "https://github.com/direnv/direnv/releases/download/v{{ template "get-github-latest-version" list "direnv/direnv" $cache }}/direnv.linux-{{ .chezmoi.arch }}"
   executable: true
 
+{{ if not .is_devcontainer -}}
+
 ".docker/cli-plugins/docker-compose":
   type: file
   url: "https://github.com/docker/compose/releases/download/v{{ template "get-github-latest-version" list "docker/compose" $cache }}/docker-compose-linux-x86_64"
