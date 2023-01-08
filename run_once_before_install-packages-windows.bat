@@ -72,8 +72,8 @@ choco upgrade cascadiacodepl -y
 #choco upgrade epicgameslauncher -y
 
 :::: Drivers
-choco upgrade geforce-experience -y
-choco upgrade geforce-game-ready-driver -y
+#choco upgrade geforce-experience -y
+#choco upgrade geforce-game-ready-driver -y
 :: choco upgrade intel-dsa -y
 
 #IF NOT EXIST "c:\Program Files\Git\usr\bin\zsh.exe" (
