@@ -65,5 +65,8 @@ Add the user to the docker group.
 
 `docker run hello-world`
 
+How to automatically start the Docker daemon on WSL2
+
+https://blog.nillsf.com/index.php/2020/06/29/how-to-automatically-start-the-docker-daemon-on-wsl2/
 
 # https://github.com/imadenugraha/Automated-Docker-Install/blob/main/ubuntu/install-docker.sh
