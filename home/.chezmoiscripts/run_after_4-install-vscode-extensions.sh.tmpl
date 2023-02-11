@@ -12,30 +12,19 @@ function is_vscode_extension_installed() {
 }
 
 wanted_extensions=(
-  # aaron-bond.better-comments
-  alefragnani.Bookmarks
-  # almenon.arepl
-  amazonwebservices.aws-toolkit-vscode
-  # christian-kohler.path-intellisense
-  # formulahendry.code-runner
-  # frhtylcn.pythonsnippets
-  # Gruntfuggly.todo-tree
-  # johnpapa.vscode-cloak
-  # KevinRose.vsc-python-indent
-  # littlefoxteam.vscode-python-test-adapter
-  # njpwerner.autodocstring
-  # pnp.polacode
-  # ritwickdey.LiveServer
-  # stkb.rewrap
   # thundra.thundra-debugger
   # usernamehw.errorlens
-  # yzhang.markdown-all-in-one
+  alefragnani.Bookmarks
+  amazonwebservices.aws-toolkit-vscode
   boto3typed.boto3-ide
   eamodio.gitlens
   EditorConfig.EditorConfig
   esbenp.prettier-vscode
   foxundermoon.shell-format
+  frhtylcn.pythonsnippets
   johnpapa.vscode-peacock
+  KevinRose.vsc-python-indent
+  littlefoxteam.vscode-python-test-adapter
   mads-hartmann.bash-ide-vscode
   mechatroner.rainbow-csv
   mhutchie.git-graph
@@ -49,11 +38,13 @@ wanted_extensions=(
   oderwat.indent-rainbow
   redhat.vscode-yaml
   richie5um2.vscode-sort-json
-  sleistner.vscode-fileutils
+  ritwickdey.LiveServer
+  stkb.rewrap
   streetsidesoftware.code-spell-checker
   timonwong.shellcheck
   Tyriar.sort-lines
   vscode-icons-team.vscode-icons
+  yzhang.markdown-all-in-one
 )
 
 for extension in "${wanted_extensions[@]}"; do

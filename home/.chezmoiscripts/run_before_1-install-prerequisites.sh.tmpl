@@ -6,13 +6,14 @@
 true || source ../.chezmoitemplates/scripts-library
 
 readonly wanted_packages=(
-  git  # used to find the latest revisions of github repositories
-  curl # used to find the latest version of github repositories
-  jq   # used on modify_ scripts like docker daemon.json
+  git
+  curl
+  jq
   # {{ if not .is_devcontainer }}
   gpg # used to decrypt the gpg keys of the apt repositories
   # {{ end }}
 )
+
 missing_packages=()
 
 for package in "${wanted_packages[@]}"; do

@@ -15,26 +15,6 @@ elif [ -x "${HOME}/.linuxbrew/bin/brew" ]; then
   eval "$("${HOME}/.linuxbrew/bin/brew" shellenv)"
 fi
 
-if [ -d "${HOME}/.volta/bin" ]; then
-  export VOLTA_HOME="${HOME}/.volta"
-  export PATH="${VOLTA_HOME}/bin:${PATH}"
-fi
-
-if [ -d "${HOME}/.deno/bin" ]; then
-  export DENO_INSTALL="${HOME}/.deno"
-  export PATH="${DENO_INSTALL}/bin:${PATH}"
-fi
-
-if [ -r "${HOME}/.sdkman/bin/sdkman-init.sh" ]; then
-  export SDKMAN_DIR="${HOME}/.sdkman"
-  # shellcheck disable=SC1091
-  . "${HOME}/.sdkman/bin/sdkman-init.sh"
-fi
-
-if [ -d "${HOME}/.local/share/flutter/bin" ]; then
-  export PATH="${HOME}/.local/share/flutter/bin:${PATH}"
-fi
-
 if [ -d "${HOME}/go/bin" ]; then
   export PATH="${HOME}/go/bin:${PATH}"
 fi

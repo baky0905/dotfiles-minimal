@@ -5,29 +5,29 @@
 # code here must be compatible with bash and zsh.
 
 refreshenv() {
-    local shell
+  local shell
 
-    shell=$(ps -p $$ -ocomm=) &&
-        exec "${shell}"
+  shell=$(ps -p $$ -ocomm=) &&
+    exec "${shell}"
 }
 
 # See: https://github.com/twpayne/chezmoi/issues/854#issuecomment-675160348
 chezmoi-re-run-scripts() { (
-    set -ex
+  set -ex
 
-    rm -f "${HOME}/.config/chezmoi/chezmoistate.boltdb"
-    chezmoi init --apply
+  rm -f "${HOME}/.config/chezmoi/chezmoistate.boltdb"
+  chezmoi init --apply
 ); }
 
-# 
+#
 
 cdw() {
-    local user_profile
-    local win_home
+  local user_profile
+  local win_home
 
-    user_profile=$(wslvar USERPROFILE) &&
-        win_home=$(wslpath "${user_profile}") &&
-        cd "${win_home}"
+  user_profile=$(wslvar USERPROFILE) &&
+    win_home=$(wslpath "${user_profile}") &&
+    cd "${win_home}"
 }
 
 # File management
@@ -47,16 +47,16 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 mcd() {
-    local dir="$1"
+  local dir="$1"
 
-    mkdir -p "${dir}" &&
-        cd "${dir}"
+  mkdir -p "${dir}" &&
+    cd "${dir}"
 }
 
 cdr() {
-    local repo="${1:-}"
+  local repo="${1:-}"
 
-    cd "${HOME}/repos/${repo}"
+  cd "${HOME}/repos/${repo}"
 }
 
 # General aliases
@@ -101,10 +101,10 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Displays information about the system.
 for command in winfetch neofetch screenfetch; do
-    if type "${command}" &>/dev/null; then
-        alias sysinfo='$command'
-        break
-    fi
+  if type "${command}" &>/dev/null; then
+    alias sysinfo='$command'
+    break
+  fi
 done
 
 # Development
@@ -120,20 +120,20 @@ alias ga='git add .'
 alias gp='git push'
 
 gc() {
-    git commit -m "${1}"
+  git commit -m "${1}"
 }
 
 gac() {
-    git add .
-    git commit -m "${1}"
+  git add .
+  git commit -m "${1}"
 }
 
 gcl() {
-    git clone "${1}"
+  git clone "${1}"
 }
 
 gcb() {
-    git checkout -b "${1}"
+  git checkout -b "${1}"
 }
 
 # Creates shortcut for python
@@ -143,5 +143,3 @@ alias ve='python3 -m venv ./.venv'
 
 # Activates Python virtual environment `venv`.
 alias va='if [ -d ./.venv ]; then \. ./.venv/bin/activate; elif [ -d ./venv ]; then \. ./venv/bin/activate; fi'
-
-# 

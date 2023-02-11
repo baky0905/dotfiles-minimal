@@ -136,4 +136,4 @@ fi
 
 # Use the "powerline-multiline" theme
 #LC_ALL=en_US.UTF-8
-export BASH_IT_THEME="powerline-multiline"
+#export BASH_IT_THEME="powerline-multiline"
