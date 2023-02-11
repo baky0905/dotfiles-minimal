@@ -2,9 +2,7 @@
 
 Bootstrap your Ubuntu in a single command!
 
-![Sample dotfiles image](https://user-images.githubusercontent.com/29582865/173688885-acd1e312-4741-4ec1-bc9d-b1f31e289749.png)
-
-This dotfiles repository is currently aimed for [**Ubuntu on WSL**](https://ubuntu.com/wsl), [**Ubuntu Server**](https://ubuntu.com/server). See how to get started with WSL [here](https://docs.microsoft.com/pt-br/windows/wsl/install-win10).
+This dotfiles repository is currently aimed for [**Ubuntu on WSL**](https://ubuntu.com/wsl), [**Ubuntu Server**](https://ubuntu.com/server). See how to get started with WSL [here](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 It's also suitable for use in [**Gitpod**](https://www.gitpod.io/docs/config-dotfiles), [**VS Code Remote - Containers**](https://code.visualstudio.com/docs/remote/containers#_personalizing-with-dotfile-repositories), or even Linux distribution that are not Ubuntu, through the [**minimum mode**](#minimum-mode).
 
@@ -19,7 +17,7 @@ You can use the [convenience script ./scripts/install_dotfiles.sh](./scripts/ins
 > 💡 We use `wget` here because it comes preinstalled with most Ubuntu versions. But you can also use `curl`:
 >
 > ```bash
->  sh -c "$(curl -fsSL https://git.io/baky0905-dotfiles)"
+>  sh -c "$(curl -fsSL https://github.com/baky0905/dotfiles-minimal)"
 > ```
 
 
@@ -30,7 +28,13 @@ The installation will ask if you want a **minimum mode installation**. The minim
 It will be enabled by default when running in a Dev Container or in distributions other than Ubuntu.
 
 
+## Configuring the terminal font
 
+This dotfiles uses the ZSH theme Powerlevel10k, so it requires you to install a font on your host machine with support for the Nerd Fonts glyphs. I recommend the FiraCode Nerd Font.
+
+In Ubuntu Desktop, the dotfiles installation will take care of installing the font and set it up for you in GNOME Terminal.
+
+But on other systems or terminal emulators, you will need to configure it manually. Here are some tips:
 ### Installing the font on **Windows**
 
 1. [Download it by clicking here](https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf).
@@ -70,12 +74,6 @@ It supports some environment variables:
 - `DOTFILES_REPO_HOST`: Defaults to `https://github.com`.
 - `DOTFILES_USER`: Defaults to `baky0905`.
 - `DOTFILES_BRANCH`: Defaults to `master`.
-
-For example, you can use it to clone and install the dotfiles repository at the `beta` branch with:
-
-```console
-DOTFILES_BRANCH=beta sh -c "$(wget -qO- https://git.io/baky0905-dotfiles)"
-```
 
 ### Installing without the convenience script
 

@@ -3,20 +3,20 @@
 # {{ include (joinPath .chezmoi.sourceDir ".chezmoitemplates/scripts-library") }}
 
 # The following line is for ShellCheck to correctly identify the above included library
-true || source ../.chezmoitemplates/scripts-library
-
-bash_it="${HOME}"/.bash-it
-if [[ -d "${bash_it}" ]]; then
-    sudo rm -rf "${bash_it}"
-fi
-
-git clone --depth=1 https://github.com/Bash-it/bash-it ~/.bash-it
-cd ~/.bash-it
-./install.sh --append-to-config
+#true || source ../.chezmoitemplates/scripts-library
+#
+#bash_it="${HOME}"/.bash-it
+#if [[ -d "${bash_it}" ]]; then
+#    sudo rm -rf "${bash_it}"
+#fi
+#
+#git clone --depth=1 https://github.com/Bash-it/bash-it ~/.bash-it
+#cd ~/.bash-it
+#./install.sh --append-to-config
 
 #bash-it update stable
 
-sed 's/BASH_IT_THEME=[^;]*/BASH_IT_THEME=powerline-multiline/' -i ~/.bashrc
+#sed 's/BASH_IT_THEME=[^;]*/BASH_IT_THEME=powerline-multiline/' -i ~/.bashrc
 
 # # install fonts
 # declare -a fonts=(

@@ -7,12 +7,7 @@
   },
   {
     "key": "ctrl+k ctrl+i",
-    "command": "-editor.action.showHover",
     "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+i",
-    "command": "python.datascience.addcellbelow"
   },
   {
     "key": "ctrl+shift+c",

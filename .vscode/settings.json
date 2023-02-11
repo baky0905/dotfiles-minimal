@@ -92,7 +92,7 @@
   "editor.acceptSuggestionOnEnter": "on",
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "expand",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 5,
   "editor.find.addExtraSpaceOnTop": false,
@@ -147,8 +147,8 @@
   },
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.wordBasedSuggestions": false,
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 79,
+  //"editor.wordWrap": "wordWrapColumn",
+  //#"editor.wordWrapColumn": 79,
   "emmet.showSuggestionsAsSnippets": false,
   "emmet.triggerExpansionOnTab": false,
   "errorLens.enabledDiagnosticLevels": [
@@ -165,7 +165,6 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.openEditors.visible": 0,
-  "extensions.autoUpdate": "onlyEnabledExtensions",
   "extensions.ignoreRecommendations": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
@@ -174,12 +173,6 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
-  // "github.copilot.enable": {
-  //   "*": true,
-  //   "markdown": true,
-  //   "plaintext": false,
-  //   "yaml": false
-  // },
   "gitlens.codeLens.authors.enabled": false,
   //"gitlens.codeLens.enabled": false,
   //"gitlens.codeLens.recentChange.enabled": false,
@@ -230,7 +223,6 @@
   "prettier.printWidth": 200,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "python.condaPath": "${env:HOME}/.local/bin/conda",
   "python.formatting.blackPath": "${env:HOME}/.local/bin/black",
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
@@ -241,8 +233,8 @@
   "python.linting.mypyPath": "${env:HOME}/.local/bin/mypy",
   "python.linting.pylintEnabled": true,
   "python.linting.pylintPath": "${env:HOME}/.local/bin/pylint",
-  "python.pipenvPath": "${env:HOME}/.local/bin/pipenv",
-  "python.poetryPath": "${env:HOME}/.local/bin/poetry",
+  //"python.pipenvPath": "${env:HOME}/.local/bin/pipenv",
+  //"python.poetryPath": "${env:HOME}/.local/bin/poetry",
   "scm.diffDecorationsGutterWidth": 2,
   "search.exclude": {
     "**/.git": true,
@@ -267,29 +259,27 @@
   "terminal.integrated.defaultProfile.windows": "bash",
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.profiles.windows": {
-    "bash": {
-      "icon": "terminal-bash",
-      "path": "C://appl//Git//bin//bash.exe"
-    },
-    "pwsh": {
-      "icon": "terminal-powershell",
-      "path": "pwsh"
-    },
-    "python3-repl": {
-      "args": [
-        "-q"
-      ],
-      "path": "python3"
-    },
-    "zsh": {
-      "path": "zsh"
-    }
-  },
+  //"terminal.integrated.profiles.windows": {
+  //  "bash": {
+  //    "icon": "terminal-bash",
+  //    "path": ""
+  //  },
+  //  "pwsh": {
+  //    "icon": "terminal-powershell",
+  //    "path": "pwsh"
+  //  },
+  //  "python3-repl": {
+  //    "args": [
+  //      "-q"
+  //    ],
+  //    "path": "python3"
+  //  },
+  //  "zsh": {
+  //    "path": "zsh"
+  //  }
+  //},
   "terminal.integrated.tabs.enabled": true,
   "window.autoDetectColorScheme": true,
-  "window.dialogStyle": "custom",
-  "window.titleBarStyle": "custom",
   "workbench.colorCustomizations": {
     "contrastActiveBorder": "#0ff"
   },
@@ -307,9 +297,6 @@
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
   "python.analysis.typeCheckingMode": "basic",
-  "gitProjectManager.baseProjectsFolders": [
-    "C:/Users/kbaka/_projects_python"
-  ],
   "redhat.telemetry.enabled": false,
   "yaml.customTags": [
     "!And",
